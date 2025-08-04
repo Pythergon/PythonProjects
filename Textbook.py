@@ -5,7 +5,7 @@ X_0 = 0
 Y_0 = 0
 
 # Steps, final, and delta cal
-N = 20
+N = 1000
 x1 = 5
 delta = (x1-X_0)/N
 
@@ -16,6 +16,9 @@ def differental1(x, y, d):
 def differental2(x, y, d):
     return y + d * (2 * x)
 
+def differental3(x, y, d):
+    return y + d * (x**2 + y**2)
+
 #Mattty lib
 xvals = []
 yvals = []
@@ -24,13 +27,12 @@ yvals = []
 Xpos = X_0
 Ypos = Y_0
 for i in range(0, N):
-    Ypos = differental2(Xpos, Ypos, delta)
+    Ypos = differental3(Xpos, Ypos, delta)
     Xpos += delta
-    print(Xpos)
     yvals.append(Ypos)
     xvals.append(Xpos)
 
 # Finish him!
 print(Ypos)
 plt.scatter(xvals, yvals)
-plt.show()
+#plt.show()
