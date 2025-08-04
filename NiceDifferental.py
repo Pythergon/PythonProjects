@@ -18,11 +18,11 @@ mu = 0.1
 
 # Starting Points
 thetaStart = np.pi / 3
-thetaDotStart = 3
+thetaDotStart = 0
 
 # Lists to hold data values
 points = [[], []]
-points_point = []
+pointObjects = []
 
 # Functions :)
 def thetaDoubleDot(theta, thetaDot):        
@@ -36,13 +36,13 @@ def theta(t):
         theta_Double_Dot = thetaDoubleDot(theta, thetaDot)
         theta += thetaDot * delta_t
         newPoint = point2D(theta, thetaDot)
-        points_point.append(newPoint)
+        pointObjects.append(newPoint)
         thetaDot += theta_Double_Dot * delta_t
     return theta
 
 # Runnnn it up!
 print(theta(100))
-for point in points_point:
+for point in pointObjects:
     point.addPointToList(points)
 
 # Plot the points!
