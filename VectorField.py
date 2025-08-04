@@ -27,7 +27,7 @@ def thetaDoubleDot(theta, thetaDot):
 thetaRange = np.linspace(-2 * np.pi, 2 * np.pi, 20)
 thetaDotRange = np.linspace(-5, 5, 20)
 
-# Get vector values and append them to list
+# Get vector values and append them to list.
 for thetaVal in thetaRange:
     for thetaDotVal in thetaDotRange:
         dTheta = thetaDotVal
